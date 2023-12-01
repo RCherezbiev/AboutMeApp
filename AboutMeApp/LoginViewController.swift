@@ -39,7 +39,7 @@ final class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let greetingVC = segue.destination as? GreetingViewController
-        greetingVC?.greetingValue = userNameTextField.text
+        greetingVC?.greetingValue = user
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -47,18 +47,10 @@ final class LoginViewController: UIViewController {
         passwordTextField.text = ""
     }
     
-    @IBAction func forgotUsernameAction() {
-        showAlert(
-            withTitle: "Oops!",
-            andMessage: "Your name is User! \u{1F609}"
-        )
-    }
-    
-    @IBAction func forgotPasswordAction() {
-        showAlert(
-            withTitle: "Oops!",
-            andMessage: "Your password is 123! \u{1F609}"
-        )
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        sender.tag == 0
+            ? showAlert(withTitle: "Oops!", andMessage: "Your name is \(user)!😉")
+            : showAlert(withTitle: "Oops!", andMessage: "Your password is \(password)!😉")
     }
     
     private func showAlert(withTitle title: String, andMessage message: String) {
@@ -68,9 +60,10 @@ final class LoginViewController: UIViewController {
             preferredStyle: .alert
         )
         
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.passwordTextField.text = ""
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
 }
-
