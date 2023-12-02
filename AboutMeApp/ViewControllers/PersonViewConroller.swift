@@ -16,8 +16,6 @@ final class PersonViewController: UIViewController {
     @IBOutlet var companyLabel: UILabel!
     @IBOutlet var postLabel: UILabel!
     
-    @IBOutlet var myPhotoImageView: UIImageView!
-    
     private let personOne = User.getPersonData()
     
     private let primaryColor = UIColor(
@@ -36,7 +34,6 @@ final class PersonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //myPhotoImageView.image = UIImage(named: "myPhoto")
         title = "\(personOne.person.name) \(personOne.person.surename)"
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         nameLabel.text = "Имя: \(personOne.person.name)."

@@ -104,7 +104,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log out">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
-                                    <color key="baseForegroundColor" systemColor="tertiaryLabelColor"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="ui5-Zl-suN" kind="unwind" unwindAction="unwindFor:" id="GSN-7n-cyb"/>
@@ -116,13 +116,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXm-OE-sJl">
                                         <rect key="frame" x="58" y="0.0" width="144.5" height="41"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <color key="textColor" systemColor="tertiaryLabelColor"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My name is," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDU-o7-BNn">
                                         <rect key="frame" x="58.5" y="71" width="143.5" height="33.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <color key="textColor" systemColor="tertiaryLabelColor"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ig-6s-WkT">
@@ -166,7 +166,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Y6h-SZ-SOW">
-                                <rect key="frame" x="16" y="300.5" width="274" height="139.5"/>
+                                <rect key="frame" x="16" y="260.5" width="274" height="139.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiI-tt-bXk">
                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="21.5"/>
@@ -200,13 +200,20 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="zw3-h2-mr1">
+                                <rect key="frame" x="82" y="90" width="156" height="156"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HNC-ST-VoM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="HNC-ST-VoM" firstAttribute="bottom" secondItem="zw3-h2-mr1" secondAttribute="bottom" constant="224" id="Q1b-Nj-K7h"/>
                             <constraint firstItem="Y6h-SZ-SOW" firstAttribute="leading" secondItem="HNC-ST-VoM" secondAttribute="leading" constant="16" id="ULe-S3-Qdh"/>
+                            <constraint firstItem="HNC-ST-VoM" firstAttribute="trailing" secondItem="zw3-h2-mr1" secondAttribute="trailing" constant="82" id="WgA-sO-m49"/>
+                            <constraint firstItem="zw3-h2-mr1" firstAttribute="top" secondItem="HNC-ST-VoM" secondAttribute="top" constant="46" id="YYk-2Q-7Nx"/>
+                            <constraint firstItem="zw3-h2-mr1" firstAttribute="leading" secondItem="HNC-ST-VoM" secondAttribute="leading" constant="82" id="ezS-wV-0Xz"/>
                             <constraint firstItem="HNC-ST-VoM" firstAttribute="trailing" secondItem="Y6h-SZ-SOW" secondAttribute="trailing" constant="30" id="jfr-PY-On0"/>
-                            <constraint firstItem="HNC-ST-VoM" firstAttribute="bottom" secondItem="Y6h-SZ-SOW" secondAttribute="bottom" constant="30" id="kvZ-uv-2a4"/>
+                            <constraint firstItem="HNC-ST-VoM" firstAttribute="bottom" secondItem="Y6h-SZ-SOW" secondAttribute="bottom" constant="70" id="kvZ-uv-2a4"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -228,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ks3-I7-6DT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="765"/>
+            <point key="canvasLocation" x="1880.625" y="764.78873239436621"/>
         </scene>
         <!--Bio View Controller-->
         <scene sceneID="hR6-cn-epT">
@@ -269,6 +276,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="KY2-qr-w0F" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G10-SJ-2Bw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -306,7 +314,11 @@
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="myPhoto" width="640" height="640"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -318,9 +330,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
