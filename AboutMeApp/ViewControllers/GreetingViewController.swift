@@ -10,8 +10,11 @@ import UIKit
 final class GreetingViewController: UIViewController {
     
     @IBOutlet var userGreetingLabel: UILabel!
+    @IBOutlet var realNameLabel: UILabel!
     
     var greetingValue: String!
+    
+    private let personOne = User.getPersonData()
     
     private let primaryColor = UIColor(
         red: 210/255,
@@ -30,7 +33,8 @@ final class GreetingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        userGreetingLabel.text = "Welcome, \(greetingValue.capitalized)!"
+        userGreetingLabel.text = "Welcome, \(personOne.userName.capitalized)!"
+        realNameLabel.text = "My name is, \(personOne.person.name)"
     }
 }
 

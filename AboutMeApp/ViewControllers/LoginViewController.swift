@@ -13,12 +13,13 @@ final class LoginViewController: UIViewController {
     
     @IBOutlet var logInButton: UIButton!
     
-    private let user = "user"
+    private let user = "User"
     private let password = "123"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logInButton.layer.cornerRadius = 10
+        userNameTextField.text = user
+        passwordTextField.text = password
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,8 +39,8 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let greetingVC = segue.destination as? GreetingViewController
-        greetingVC?.greetingValue = user
+        guard let greetingVC = segue.destination as? GreetingViewController else {return}
+        greetingVC.greetingValue = user
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
