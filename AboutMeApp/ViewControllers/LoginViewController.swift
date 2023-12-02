@@ -39,7 +39,8 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let greetingVC = segue.destination as? GreetingViewController else {return}
+        guard let tabBarVC = segue.destination as? UITabBarController,
+              let greetingVC = tabBarVC.viewControllers?[0] as? GreetingViewController else { return }
         greetingVC.greetingValue = user
     }
     
